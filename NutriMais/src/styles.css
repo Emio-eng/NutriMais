@@ -1,0 +1,12 @@
+body{
+  background-image: url('./assets/img/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.95;
+  /* background: rgb(50,39,122);
+  background: linear-gradient(60deg, rgba(50,39,122,0.9836309523809523) 33%,
+   rgba(38,0,255,0.9668242296918768) 66%, rgba(39,59,122,1) 99%);
+  height: 100vh; */
+
+}
