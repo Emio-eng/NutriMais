@@ -15,11 +15,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 import { HomeComponent } from './views/home/home.component';
+import { SignUpComponent } from './views/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
