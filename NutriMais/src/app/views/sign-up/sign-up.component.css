@@ -25,3 +25,7 @@ label{
   margin: 0 auto !important;
   float: none !important;
 }
+
+.ng-invalid.ng-touched:not(form){
+  border: 1px solid red;
+}

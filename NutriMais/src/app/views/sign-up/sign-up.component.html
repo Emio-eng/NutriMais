@@ -7,36 +7,70 @@
           <h6>Se registre!</h6>
         </div>
 
-          <form>
+          <form (ngSubmit)="register()" [formGroup]="userRegister" #formDir="ngForm">
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Nome completo</label>
-              <input type="text" class="form-control" id="name">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text"></div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="cpf">
-            </div>
+                <label  class="form-label">Nome completo</label>
+                <input  type="text" class="form-control" id="name"
+                formControlName="nameUser"
+                name="nome_completo" [(ngModel)]="Registro.nome_completo" required>
+                <div *ngIf="nameUser.invalid && formDir.submitted">
+                  <p *ngIf="nameUser.errors?.['required']">O nome é obrigatório!</p>
+                  <p *ngIf="nameUser.errors?.['minLength']">O nome precisa ter no minímo 2 caracteres!</p>
+                </div>
 
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input  type="email" class="form-control" id="email"
+                  formControlName="emailUser" name="email"
+                  required [(ngModel)]="Registro.email">
+                  <div *ngIf="emailUser.invalid && formDir.submitted">
+                    <p *ngIf="emailUser.errors?.['required']">O e-mail é obrigatório!</p>
+                    <p *ngIf="emailUser.errors?.['email']">O e-mail é inválido!</p>
+                  </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="isNutricionista" checked/>
-              <label class="form-check-label mb-2" for="flexCheckChecked">Você é nutricionista?</label>
-            </div>
 
-            <button type="submit" class="btn btn-primary mb-2">Cadastro</button>
-          </form>
-          <a style ="color:#fff;margin-top: 10px;"routerLink=''>Já tem cadastro? Clique aqui para logar!</a>
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">CPF</label>
+                <input [(ngModel)]="Registro.cpf" type="text" class="form-control"
+                id="cpf" required formControlName="cpfUser" mask="000.000.000-00">
+                <div *ngIf="cpfUser.invalid && formDir.submitted">
+                  <p *ngIf="cpfUser.errors?.['required']">O CPF é obrigatório!</p>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label">Password</label>
+                <input [(ngModel)]="Registro.password" type="password"
+                class="form-control" id="password" required name="password" formControlName="passwordUser">
+                <div *ngIf="passwordUser.invalid && formDir.submitted">
+                  <p *ngIf="passwordUser.errors?.['required']">A senha é obrigatória!</p>
+                  <p *ngIf="passwordUser.errors?.['minLength']">A senha precisa ter no minímo 8 caracteres!</p>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <!-- Fazer um condição para habilitar o CRN apenas se o check estiver checkado -->
+                <label class="form-label">CRN</label>
+                <div *ngIf="Registro.is_nutricionista == false">
+                  <input [(ngModel)]="Registro.crn"  type="text" class="form-control"
+                  id="crn" required name="crn" formControlName="crnUser">
+                </div>
+
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="Registro.is_nutricionista" type="checkbox" name="is_nutricionista"
+                id="is_nutricionista" formControlName="is_Nutricionista" />
+                <label class="form-check-label mb-2" for="flexCheckChecked">Você é nutricionista?</label>
+              </div>
+
+              <button type="submit" [disabled]="userRegister.invalid" class="btn btn-primary mb-2">Cadastro</button>
+            </form>
+            <a style ="color:#fff;margin-top: 10px;"routerLink=''>Já tem cadastro? Clique aqui para logar!</a>
+        </div>
       </div>
     </div>
-  </div>
 
-</div>
+  </div>

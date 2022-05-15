@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,13 +10,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
-
-
-
-
 import { HomeComponent } from './views/home/home.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
+import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -24,16 +22,20 @@ import { SignUpComponent } from './views/sign-up/sign-up.component';
     SignUpComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatIconModule,
     MatSlideToggleModule,
-    FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatToolbarModule,
+    HttpClientModule,
+    CommonModule,
+    NgxMaskModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
