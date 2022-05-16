@@ -3,6 +3,7 @@ import { ResponseRegister } from 'src/app/resourcers/models/responseRegister';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ResponseJwt } from '../resourcers/models/responseJwt';
+import { ResponseLogin } from '../resourcers/models/responseLogin';
 
 
 @Injectable({
@@ -20,4 +21,12 @@ export class UserService {
     return this.http.post<ResponseJwt>
     ('https://nutri-app-back-end.herokuapp.com/api/register/',responseRegister)
   }
+
+  public postLogin(responseLogin:ResponseLogin):Observable<ResponseJwt>{
+    return this.http.post<ResponseJwt>(
+      'https://nutri-app-back-end.herokuapp.com/api/token/',responseLogin
+    )
+
+  }
+
 }

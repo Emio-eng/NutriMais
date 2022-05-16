@@ -1,4 +1,5 @@
 export class ResponseRegister{
+  id?:string;
    nome_completo: string;
    email: string;
    cpf: string;

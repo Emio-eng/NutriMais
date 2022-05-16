@@ -55,19 +55,15 @@ export class SignUpComponent implements OnInit {
   }
 
 
-  public register() :void{
+  public register(){
     if(this.userRegister.invalid){
       return;
     }
+
     this.user.postRegister(this.Registro).subscribe(data=>
       {
-
         console.log(data);
-      },
-      error => {
-        this.alertService.error(error.error.cpf[0])
-        console.error(error);
-      })
+      },)
 
   }
 

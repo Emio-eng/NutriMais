@@ -1,3 +1,4 @@
 export class ResponseJwt{
-  public jwt:string;
+  public access:string;
+  public refresh:string;
 }
