@@ -17,13 +17,15 @@ import { NgxMaskModule } from 'ngx-mask';
 import { FeedComponent } from './views/feed/feed.component'
 import {MatCardModule} from '@angular/material/card';
 
+import { RequererConsultasComponent } from './views/requerer-consultas/requerer-consultas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignUpComponent,
-    FeedComponent
+    FeedComponent,
+    RequererConsultasComponent,
   ],
   imports: [
     FormsModule,
