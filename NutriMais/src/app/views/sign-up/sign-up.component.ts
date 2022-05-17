@@ -71,4 +71,3 @@ export class SignUpComponent implements OnInit {
 
 }
 
-

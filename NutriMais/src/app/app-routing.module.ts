@@ -1,3 +1,4 @@
+import { RequererConsultasComponent } from './views/requerer-consultas/requerer-consultas.component';
 import { FeedComponent } from './views/feed/feed.component';
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'feed',
     component:FeedComponent
+  },
+  {
+    path:'consulta',
+    component: RequererConsultasComponent
   }
 ];
 

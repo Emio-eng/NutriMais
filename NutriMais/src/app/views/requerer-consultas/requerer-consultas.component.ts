@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ConsultNutriService } from './../../services/consult-nutri.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { requestConsulta } from 'src/app/resourcers/models/requestConsulta';
@@ -16,7 +18,7 @@ export class RequererConsultasComponent implements OnInit {
   public formConsulta: requestConsulta;
 
 
-  constructor(private http:UserService) { }
+  constructor(private http:ConsultNutriService, private router:Router) { }
 
   ngOnInit(): void {
     this.formConsulta = new requestConsulta();
@@ -37,10 +39,15 @@ export class RequererConsultasComponent implements OnInit {
 
     })
   }
-  public formulariConsulta() :void{
+  public enviarConsulta() :void{
     if(this.formularioConsulta.invalid){
       return;
     }
+    this.http.enviarConsulta(this.formConsulta).subscribe(
+      (()=> {
+        this.router.navigateByUrl('/feed')
+      })
+    )
   }
 
 }

@@ -18,8 +18,8 @@ export class UserService {
     private http:HttpClient
   ) { }
 
-  public postRegister(responseRegister:ResponseRegister):Observable<ResponseJwt>{
-    return this.http.post<ResponseJwt>
+  public postRegister(responseRegister:ResponseRegister){
+    return this.http.post
     ('https://nutri-app-back-end.herokuapp.com/api/register/',responseRegister)
   }
 

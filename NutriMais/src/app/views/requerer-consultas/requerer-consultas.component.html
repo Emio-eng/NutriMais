@@ -1,37 +1,33 @@
-<div class="d-flex justify-content-center">
-    <div class="row">
+
+
+<div>
+    <div>
       <div class="centered">
         <div class="card">
-          <div class="text-center">
-            <h1>Consultar</h1>
+          <div>
+            <h1>Formulário para consulta</h1>
           </div>
-  
-            <form [formGroup]="formularioConsulta" #formDir="ngForm">
-              <div class="mb-3">
+
+            <form [formGroup]="formularioConsulta" (ngSubmit)="enviarConsulta()" #formDir="ngForm">
                 <div class="mb-3">
-                  <label>Nome Usuario</label>
+                  <label>Nome completo:</label>
                   <input type="text" class="form-control" id="usuario"
                    required name="usuario" formControlName="usuario" [(ngModel)]="formConsulta.user">
                 </div>
-                <label>Nutricionista</label>
-                <input type="text" class="form-control" id="nutricionista"
-                 formControlName="idUser" name="idUser"
-                required [(ngModel)]="formConsulta.nutricionista">
-              </div>
               <div class="mb-3">
-                <label>Pesso Atual</label>
-                <input type="number" class="form-control" id="Peso atual"
-                 required name="numPesso" formControlName="numPesso" [(ngModel)]="formConsulta.peso_atual">
+                <label>Peso Atual:</label>
+                <input type="number" class="form-control" id="peso_atual"
+                 required name="numPeso" formControlName="numPesso" [(ngModel)]="formConsulta.peso_atual">
               </div>
                 <div class="mb-3">
                   <label>Quantidade de Refeições</label>
-                  <input type="number" class="form-control" id="Quantidade de Refeicoes"
+                  <input type="number" class="form-control" id="quantidade_refeicoes"
                    formControlName="quantRefeicoes" name="quantRefeicoes"
                   required [(ngModel)]="formConsulta.quantidade_refeicoes">
                 </div>
                 <div class="mb-3">
                   <label>Quantidade de Refeições Almejadas</label>
-                  <input type="number" class="form-control" id="Quantidade Almejada"
+                  <input type="number" class="form-control" id="quantidade_refeicoes_almejadas"
                    required name="refeicoesAlmejadas" formControlName="refeicoesAlmejadas" [(ngModel)]="formConsulta.quantidade_refeicoes_almejadas">
                 </div>
                 <div class="mb-3">
@@ -42,7 +38,7 @@
                   </div>
                   <div class="mb-3">
                     <label>Valor Disponível</label>
-                    <input type="text" class="form-control" id="Valor Disponível"
+                    <input type="text" class="form-control" id="valor_disponivel"
                      required name="valor" formControlName="valor" [(ngModel)]="formConsulta.valor_disponivel">
                   </div>
                     <div class="mb-3">
@@ -53,35 +49,35 @@
                     </div>
                     <div class="mb-3">
                       <label>Alimentos favoritos</label>
-                      <input type="text" class="form-control" id="Alimentosfavoritos"
+                      <input type="text" class="form-control" id="alimentos_favoritos"
                        required name="nomeAlimento" formControlName="nomeAlimento" [(ngModel)]="formConsulta.alimentos_favoritos">
                     </div>
                     <div class="mb-3">
                         <label>Alimentos não desejados</label>
-                        <input type="text" class="form-control" id="Alimentonaodesejado"
+                        <input type="text" class="form-control" id="Alimentonao"
                          formControlName="Alimentonao" name="Alimentonao"
                         required [(ngModel)]="formConsulta.alimentos_nao_desejaveis">
                       </div>
                       <div class="mb-3">
                         <label>Alergias</label>
-                        <input type="text" class="form-control" id="Alergias"
+                        <input type="text" class="form-control" id="nomeAlergia"
                          required name="nomeAlergia" formControlName="nomeAlergia" [(ngModel)]="formConsulta.alergias">
                       </div>
                         <div class="mb-3">
                           <label>Exercício Físico</label>
-                          <input type="text" class="form-control" id="Exercicio"
+                          <input type="text" class="form-control" id="exercicio"
                            formControlName="exercicio" name="exercicio"
                           required [(ngModel)]="formConsulta.exercicio_fisico">
                         </div>
                         <div class="mb-3">
                           <label>Restrição Médica</label>
-                          <input type="text" class="form-control" id="Restricao"
+                          <input type="text" class="form-control" id="restricao"
                            required name="restricao" formControlName="restricao" [(ngModel)]="formConsulta.restricao_medica">
                         </div>
                         <div class="mb-3">
                             <label>Consumo de água</label>
-                            <input type="number" class="form-control" id="Consumoagua"
-                             formControlName="cosumoAgua" name="consumoAgua"
+                            <input type="number" class="form-control" id="consumoaAgua"
+                             formControlName="consumoAgua" name="consumoAgua"
                             required [(ngModel)]="formConsulta.consumo_agua">
                           </div>
                           <div class="mb-3">
@@ -89,13 +85,13 @@
                             <input type="text" class="form-control" id="objetivo"
                              required name="objetivo" formControlName="objetivo" [(ngModel)]="formConsulta.objetivo">
                           </div>
-    
-  
-              <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+
+
+              <button [disabled]="formularioConsulta.invalid" type="submit"  class="btn btn-primary mb-2">Enviar</button>
             </form>
-           
+
         </div>
       </div>
     </div>
-  
+
   </div>

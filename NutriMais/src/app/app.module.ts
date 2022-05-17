@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMaskModule } from 'ngx-mask';
 import { FeedComponent } from './views/feed/feed.component'
 import {MatCardModule} from '@angular/material/card';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RequererConsultasComponent } from './views/requerer-consultas/requerer-consultas.component';
 
 @NgModule({
@@ -41,7 +41,7 @@ import { RequererConsultasComponent } from './views/requerer-consultas/requerer-
     HttpClientModule,
     CommonModule,
     NgxMaskModule.forRoot(),
-    MatCardModule
+    MatCardModule,MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

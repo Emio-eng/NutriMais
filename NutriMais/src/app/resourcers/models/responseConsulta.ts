@@ -1,4 +1,4 @@
-export class responseConsulta{
+export class ResponseConsulta{
     user: number;
     nutricionista: number;
     nome_user: string;
