@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+    <div class="row">
+      <div class="centered">
+        <div class="card">
+          <div class="text-center">
+            <h1>Consultar</h1>
+          </div>
+  
+            <form [formGroup]="formularioConsulta" #formDir="ngForm">
+              <div class="mb-3">
+                <div class="mb-3">
+                  <label>Nome Usuario</label>
+                  <input type="text" class="form-control" id="usuario"
+                   required name="usuario" formControlName="usuario" [(ngModel)]="formConsulta.user">
+                </div>
+                <label>Nutricionista</label>
+                <input type="text" class="form-control" id="nutricionista"
+                 formControlName="idUser" name="idUser"
+                required [(ngModel)]="formConsulta.nutricionista">
+              </div>
+              <div class="mb-3">
+                <label>Pesso Atual</label>
+                <input type="number" class="form-control" id="Peso atual"
+                 required name="numPesso" formControlName="numPesso" [(ngModel)]="formConsulta.peso_atual">
+              </div>
+                <div class="mb-3">
+                  <label>Quantidade de Refeições</label>
+                  <input type="number" class="form-control" id="Quantidade de Refeicoes"
+                   formControlName="quantRefeicoes" name="quantRefeicoes"
+                  required [(ngModel)]="formConsulta.quantidade_refeicoes">
+                </div>
+                <div class="mb-3">
+                  <label>Quantidade de Refeições Almejadas</label>
+                  <input type="number" class="form-control" id="Quantidade Almejada"
+                   required name="refeicoesAlmejadas" formControlName="refeicoesAlmejadas" [(ngModel)]="formConsulta.quantidade_refeicoes_almejadas">
+                </div>
+                <div class="mb-3">
+                    <label>Refeições</label>
+                    <input type=" text" class="form-control" id="Refeicoes"
+                     formControlName="refeicoes" name="refeicoes"
+                    required [(ngModel)]="formConsulta.refeicoes">
+                  </div>
+                  <div class="mb-3">
+                    <label>Valor Disponível</label>
+                    <input type="text" class="form-control" id="Valor Disponível"
+                     required name="valor" formControlName="valor" [(ngModel)]="formConsulta.valor_disponivel">
+                  </div>
+                    <div class="mb-3">
+                      <label>Rotina</label>
+                      <input type="text" class="form-control" id="rotina"
+                       formControlName="rotina" name="rotina"
+                      required [(ngModel)]="formConsulta.rotina">
+                    </div>
+                    <div class="mb-3">
+                      <label>Alimentos favoritos</label>
+                      <input type="text" class="form-control" id="Alimentosfavoritos"
+                       required name="nomeAlimento" formControlName="nomeAlimento" [(ngModel)]="formConsulta.alimentos_favoritos">
+                    </div>
+                    <div class="mb-3">
+                        <label>Alimentos não desejados</label>
+                        <input type="text" class="form-control" id="Alimentonaodesejado"
+                         formControlName="Alimentonao" name="Alimentonao"
+                        required [(ngModel)]="formConsulta.alimentos_nao_desejaveis">
+                      </div>
+                      <div class="mb-3">
+                        <label>Alergias</label>
+                        <input type="text" class="form-control" id="Alergias"
+                         required name="nomeAlergia" formControlName="nomeAlergia" [(ngModel)]="formConsulta.alergias">
+                      </div>
+                        <div class="mb-3">
+                          <label>Exercício Físico</label>
+                          <input type="text" class="form-control" id="Exercicio"
+                           formControlName="exercicio" name="exercicio"
+                          required [(ngModel)]="formConsulta.exercicio_fisico">
+                        </div>
+                        <div class="mb-3">
+                          <label>Restrição Médica</label>
+                          <input type="text" class="form-control" id="Restricao"
+                           required name="restricao" formControlName="restricao" [(ngModel)]="formConsulta.restricao_medica">
+                        </div>
+                        <div class="mb-3">
+                            <label>Consumo de água</label>
+                            <input type="number" class="form-control" id="Consumoagua"
+                             formControlName="cosumoAgua" name="consumoAgua"
+                            required [(ngModel)]="formConsulta.consumo_agua">
+                          </div>
+                          <div class="mb-3">
+                            <label>Objetivo</label>
+                            <input type="text" class="form-control" id="objetivo"
+                             required name="objetivo" formControlName="objetivo" [(ngModel)]="formConsulta.objetivo">
+                          </div>
+    
+  
+              <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+            </form>
+           
+        </div>
+      </div>
+    </div>
+  
+  </div>

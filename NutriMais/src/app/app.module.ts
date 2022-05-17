@@ -13,13 +13,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
+import { RequererConsultasComponent } from './views/requerer-consultas/requerer-consultas.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    RequererConsultasComponent
   ],
   imports: [
     FormsModule,
