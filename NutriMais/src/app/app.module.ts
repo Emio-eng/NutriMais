@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,13 +13,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeComponent } from './views/home/home.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
+import { FeedComponent } from './views/feed/feed.component'
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SignUpComponent
+    SignUpComponent,
+    FeedComponent
   ],
   imports: [
     FormsModule,
@@ -35,7 +39,7 @@ import { NgxMaskModule } from 'ngx-mask'
     HttpClientModule,
     CommonModule,
     NgxMaskModule.forRoot(),
-
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
